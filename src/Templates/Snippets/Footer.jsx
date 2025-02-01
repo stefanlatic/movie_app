@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <Card className="d-flex text-center fixed-bottom" data-bs-theme="dark" >
       <Card.Body>
-        <Card.Text className=''>
-        <p className='d-inline'>Movies © 2025</p>
+        <Card.Text>
+        <p className="d-inline">Movies © 2025</p>
          <a className="px-3"href='#'>Login</a>
          <a className="px-3" href='#'>Home</a>
          <a className="px-3" href='#'>Requests</a>
