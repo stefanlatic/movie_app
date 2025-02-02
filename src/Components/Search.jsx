@@ -2,15 +2,13 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import SearchResults from "../Templates/Snippets/SearchResults";
-import { useState } from "react";
+import { SearchContext } from "./SearchContext";
+import { useContext } from "react";
 import axios from "axios";
 
 const Search = () => {
-
-    const [movies, setMovies] = useState([]);
-    const [searchTerm, setSearchTerm] = useState();
-
-
+    const { movies, setMovies, searchTerm, setSearchTerm } = useContext(SearchContext);
+    
     const searchMovies = () => {
         axios.get(  `${process.env.REACT_APP_OMDBAPI_URL}?s="${searchTerm}"&apikey=${process.env.REACT_APP_OMDBAPI_KEY}`)
       .then(response => setMovies(response.data.Search))
